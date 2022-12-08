@@ -1,0 +1,13 @@
+version: '3'
+services:
+  database:
+    image: 'mongo'
+    container_name: 'mondo-db'
+    environment:
+      - MONGO_INITDB_DATABASE=todoapp
+      - MONGO_INITDB_ROOT_USERNAME=todoappuser
+      - MONGO_INITDB_ROOT_PASSWORD=todoappuser
+    volumes:
+      - ./init.js:/docker-entrypoint-initdb.d/init.js:ro
+    ports:
+      - '27017-27019:27017-27019'
