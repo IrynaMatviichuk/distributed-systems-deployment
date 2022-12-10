@@ -46,3 +46,5 @@ Zip project: `zip -r publish.zip ./ -x .git/**\*`
 Unzip: `unzip publish.zip -d ./`
 
 Install node: `sudo apt update && sudo apt install nodejs && sudo apt install npm`
+
+Add new user: `adduser todoapp`
