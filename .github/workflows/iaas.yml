@@ -39,7 +39,7 @@ jobs:
             npm run build
             {
               echo "API_PORT=${{ secrets.API_PORT }}"
-              echo "MONGO_URI=$MONGO_URI"
-              echo "SECRET_OR_KEY=$SECRET_OR_KEY"
+              echo "MONGO_URI=${{ secrets.MONGO_URI }}"
+              echo "SECRET_OR_KEY=${{ secrets.SECRET_OR_KEY }}"
             } >> .env
             npm run start
