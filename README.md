@@ -3,6 +3,7 @@
 Original API repo: https://github.com/nukumalik/express-typescript-todo-restful-api
 
 ### Getting Started
+
 #### Install Packages
 
 ```bash
@@ -38,6 +39,8 @@ $ npm run start
 Install MongoDB on Ubuntu: https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/
 
 Deploy via Github Actions: https://www.digitalocean.com/community/questions/how-to-deploy-using-github-action
+
+https://medium.com/swlh/how-to-deploy-your-application-to-digital-ocean-using-github-actions-and-save-up-on-ci-cd-costs-74b7315facc2
 
 Zip project: `zip -r publish.zip ./ -x .git/**\*`
 Unzip: `unzip publish.zip -d ./`

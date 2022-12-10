@@ -37,4 +37,6 @@ jobs:
               echo "MONGODB_URI=${{ secrets.MONGODB_URI }}"
               echo "SECRET_OR_KEY=${{ secrets.SECRET_OR_KEY }}"
             } >> .env
-            npm run start
+            cp .github/workflows/todoapp.service /etc/systemd/system/todoapp.service
+            # npm run start
+            sudo systemctl restart demo

@@ -1,0 +1,12 @@
+[Unit]
+Description=todoapp
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=5
+ExecStart=/usr/bin/node /opt/todoapp/dist/index.js
+WorkingDirectory=/opt/todoapp/dist/
+
+[Install]
+WantedBy=multi-user.target
