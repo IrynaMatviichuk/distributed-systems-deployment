@@ -37,7 +37,9 @@ jobs:
             cd /opt/todoapp
             npm i
             npm run build
-            echo $API_PORT >> .env
-            echo $MONGO_URI >> .env
-            echo $SECRET_OR_KEY >> .env
+            {
+              echo "API_PORT=$API_PORT"
+              echo "MONGO_URI=$MONGO_URI"
+              echo "SECRET_OR_KEY=$SECRET_OR_KEY"
+            } >> .env
             npm run start
