@@ -38,5 +38,5 @@ jobs:
               echo "SECRET_OR_KEY=${{ secrets.SECRET_OR_KEY }}"
             } >> .env
             cp .github/workflows/todoapp.service /etc/systemd/system/todoapp.service
-            systemctl daemon-reload
+            sudo systemctl daemon-reload
             sudo systemctl restart todoapp
