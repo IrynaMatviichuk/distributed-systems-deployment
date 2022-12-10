@@ -6,11 +6,6 @@ on:
 
   workflow_dispatch:
 
-env:
-  API_PORT: ${{ secrets.API_PORT }}
-  MONGO_URI: ${{ secrets.MONGO_URI }}
-  SECRET_OR_KEY: ${{ secrets.SECRET_OR_KEY }}
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -39,7 +34,7 @@ jobs:
             npm run build
             {
               echo "API_PORT=${{ secrets.API_PORT }}"
-              echo "MONGO_URI=${{ secrets.MONGO_URI }}"
+              echo "MONGODB_URI=${{ secrets.MONGODB_URI }}"
               echo "SECRET_OR_KEY=${{ secrets.SECRET_OR_KEY }}"
             } >> .env
             npm run start
