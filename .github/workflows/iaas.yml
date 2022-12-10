@@ -6,6 +6,11 @@ on:
 
   workflow_dispatch:
 
+env:
+  API_PORT: ${{ secrets.API_PORT }}
+  MONGO_URI: ${{ secrets.MONGO_URI }}
+  SECRET_OR_KEY: ${{ secrets.SECRET_OR_KEY }}
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -32,4 +37,7 @@ jobs:
             cd /opt/todoapp
             npm i
             npm run build
+            echo $API_PORT >> .env
+            echo $MONGO_URI >> .env
+            echo $SECRET_OR_KEY >> .env
             npm run start
