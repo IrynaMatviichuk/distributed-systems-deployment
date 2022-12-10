@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Copy files vis scp
-        uses: appleboy/scp-action@v0.1.6
+        uses: appleboy/scp-action@v0.1.3
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
