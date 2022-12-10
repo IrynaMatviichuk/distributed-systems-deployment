@@ -39,4 +39,4 @@ jobs:
             } >> .env
             cp .github/workflows/todoapp.service /etc/systemd/system/todoapp.service
             # npm run start
-            sudo systemctl restart demo
+            sudo systemctl restart todoapp
