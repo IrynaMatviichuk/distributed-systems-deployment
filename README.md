@@ -42,6 +42,8 @@ Deploy via Github Actions: https://www.digitalocean.com/community/questions/how-
 
 https://medium.com/swlh/how-to-deploy-your-application-to-digital-ocean-using-github-actions-and-save-up-on-ci-cd-costs-74b7315facc2
 
+https://dev.to/lakhansamani/automate-server-deployment-with-systemd-github-actions-18od
+
 Zip project: `zip -r publish.zip ./ -x .git/**\*`
 Unzip: `unzip publish.zip -d ./`
 
