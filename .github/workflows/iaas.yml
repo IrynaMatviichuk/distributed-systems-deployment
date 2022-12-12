@@ -16,20 +16,27 @@ jobs:
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
+          key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.PORT }}
           source: "."
-          target: "/opt/todoapp"
+          target: "~/todoapp"
 
       - name: Run the app
         uses: appleboy/ssh-action@v0.1.6
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
+          key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.PORT }}
           script: |
-            cd /opt/todoapp
+            cd ~/todoapp
             npm i
             npm run build
-            npm run start
+            {
+              echo "API_PORT=${{ secrets.API_PORT }}"
+              echo "MONGODB_URI=${{ secrets.MONGODB_URI }}"
+              echo "SECRET_OR_KEY=${{ secrets.SECRET_OR_KEY }}"
+            } >> .env
+            cp .github/workflows/todoapp.service /home/todoapp/.config/systemd/user/todoapp.service
+            systemctl --user daemon-reload
+            systemctl --user restart todoapp

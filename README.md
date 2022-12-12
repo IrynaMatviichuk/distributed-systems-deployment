@@ -3,6 +3,7 @@
 Original API repo: https://github.com/nukumalik/express-typescript-todo-restful-api
 
 ### Getting Started
+
 #### Install Packages
 
 ```bash
@@ -39,7 +40,13 @@ Install MongoDB on Ubuntu: https://www.mongodb.com/docs/manual/tutorial/install-
 
 Deploy via Github Actions: https://www.digitalocean.com/community/questions/how-to-deploy-using-github-action
 
+https://medium.com/swlh/how-to-deploy-your-application-to-digital-ocean-using-github-actions-and-save-up-on-ci-cd-costs-74b7315facc2
+
+https://dev.to/lakhansamani/automate-server-deployment-with-systemd-github-actions-18od
+
 Zip project: `zip -r publish.zip ./ -x .git/**\*`
 Unzip: `unzip publish.zip -d ./`
 
 Install node: `sudo apt update && sudo apt install nodejs && sudo apt install npm`
+
+Add new user: `adduser todoapp`
