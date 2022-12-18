@@ -13,9 +13,9 @@ services:
       - '27017-27019:27017-27019'
 
   server:
-    build:
-      context: ./
-      dockerfile: Dockerfile
+    image: registry.digitalocean.com/dsd-paas-cr/todoapp:latest
+    env_file:
+      - .env
     ports:
       - 5000:5000
     depends_on:
