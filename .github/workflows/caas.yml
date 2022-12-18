@@ -30,6 +30,6 @@ jobs:
               echo "API_PORT=${{ secrets.API_PORT }}"
               echo "MONGODB_URI=${{ secrets.MONGODB_URI }}"
               echo "SECRET_OR_KEY=${{ secrets.SECRET_OR_KEY }}"
-            } >> .env
+            } > .env
             docker compose down
-            docker compose down --build
+            docker compose up --build
