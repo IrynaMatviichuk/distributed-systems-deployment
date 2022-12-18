@@ -15,11 +15,8 @@ services:
   server:
     build:
       context: ./
-      dockerfile: ./Dockerfile
-    expose:
-      - 5000
+      dockerfile: Dockerfile
     ports:
       - 5000:5000
-    command: npm run start
     depends_on:
       - database
