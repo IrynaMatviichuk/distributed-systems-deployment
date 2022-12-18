@@ -11,3 +11,12 @@ services:
       - ./init.js:/docker-entrypoint-initdb.d/init.js:ro
     ports:
       - '27017-27019:27017-27019'
+
+  server:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - 5000:5000
+    depends_on:
+      - database
