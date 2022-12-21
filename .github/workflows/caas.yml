@@ -40,6 +40,9 @@ jobs:
               echo "API_PORT=${{ secrets.API_PORT }}"
               echo "MONGODB_URI=${{ secrets.MONGODB_URI }}"
               echo "SECRET_OR_KEY=${{ secrets.SECRET_OR_KEY }}"
+              echo "MONGO_INITDB_DATABASE=${{ secrets.MONGO_INITDB_DATABASE }}"
+              echo "MONGO_INITDB_ROOT_USERNAME=${{ secrets.MONGO_INITDB_ROOT_USERNAME }}"
+              echo "MONGO_INITDB_ROOT_PASSWORD=${{ secrets.MONGO_INITDB_ROOT_PASSWORD }}"
             } > .env
             docker compose pull server
             docker compose down
