@@ -41,4 +41,5 @@ jobs:
               echo "MONGODB_URI=${{ secrets.MONGODB_URI }}"
               echo "SECRET_OR_KEY=${{ secrets.SECRET_OR_KEY }}"
             } > .env
-            docker compose restart
+            docker compose down
+            docker compose up --build -d
