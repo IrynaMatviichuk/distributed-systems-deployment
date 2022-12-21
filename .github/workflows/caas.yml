@@ -32,4 +32,4 @@ jobs:
               echo "SECRET_OR_KEY=${{ secrets.SECRET_OR_KEY }}"
             } > .env
             docker compose down
-            docker compose up --build
+            docker compose up --build -d
