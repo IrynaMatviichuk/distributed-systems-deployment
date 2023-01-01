@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: dsd-kaas
+spec:
+  type: LoadBalancer
+  selector:
+    app: dsd-kaas
+  ports:
+    - port: 5000
+      targetPort: 5000
