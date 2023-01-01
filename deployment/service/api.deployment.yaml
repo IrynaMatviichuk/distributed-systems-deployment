@@ -1,0 +1,37 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dsd-kaas
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: dsd-kaas
+  template:
+    metadata:
+      labels:
+        app: dsd-kaas
+    spec:
+      containers:
+        - name: dsd-kaas
+          image: <IMAGE>
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5000
+          env:
+            - name: API_PORT
+              valueFrom:
+                secretKeyRef:
+                  name: api-port
+                  key: port
+            - name: MONGODB_URI
+              valueFrom:
+                secretKeyRef:
+                  name: mongodb-uri
+                  key: mongodb_uri
+            - name: SECRET_OR_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: secret-or-key
+                  key: secret_or_key
